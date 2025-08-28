@@ -321,6 +321,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: Inter, sans-serif;
+  font-weight: 400;
   background-color: #FFFFFF;
   color: #000000;
 }
@@ -361,10 +362,33 @@ h1, h2, h3, p, figure, fieldset {
 }
 
 .container {
-  max-width: 1240px;
+  --max-width: 1180px;
+  --padding: 30px;
+  max-width: calc(var(--max-width) + var(--padding) * 2);
+  padding: 0 var(--padding);
   margin: 0 auto;
 }
 
+@media (max-width: 1024px) {
+  .container {
+    --max-width: 880px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    --max-width: 620px;
+  }
+}
+@media (max-width: 680px) {
+  .container {
+    --max-width: 560px;
+  }
+}
+@media (max-width: 540px) {
+  .container {
+    --padding: 15px;
+  }
+}
 /* inter-regular - cyrillic_latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -393,5 +417,6 @@ h1, h2, h3, p, figure, fieldset {
   src: url("../fonts/inter-v19-cyrillic_latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 .header {
-  color: inherit;
+  margin: 0;
+  padding: 0;
 }/*# sourceMappingURL=style.css.map */
