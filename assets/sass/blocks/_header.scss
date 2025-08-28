@@ -10,6 +10,10 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__phone {
@@ -17,20 +21,43 @@
     line-height: 17px;
     font-weight: 600;
     text-transform: uppercase;
+
+    @include tablet {
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__logo {
     margin: 0 auto;
+
+    @include tablet {
+      max-width: 154px;
+      justify-self: st;
+    }
+
+    @include mobile {
+      max-width: 124px;
+    }
   }
 
   &__navigation {
     justify-self: end;
+
   }
 
   &__nav-list {
     display: flex;
     align-items: center;
     gap: 24px;
+
+    @include mobile {
+      gap: 16px;
+    }
   }
 
   &__link {

@@ -433,14 +433,41 @@ fieldset {
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
 }
+@media (max-width: 540px) {
+  .header__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .header__phone {
   font-size: 14px;
   line-height: 17px;
   font-weight: 600;
   text-transform: uppercase;
 }
+@media (max-width: 768px) {
+  .header__phone {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+@media (max-width: 540px) {
+  .header__phone {
+    display: none;
+  }
+}
 .header__logo {
   margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .header__logo {
+    max-width: 154px;
+    justify-self: st;
+  }
+}
+@media (max-width: 540px) {
+  .header__logo {
+    max-width: 124px;
+  }
 }
 .header__navigation {
   justify-self: end;
@@ -449,6 +476,11 @@ fieldset {
   display: flex;
   align-items: center;
   gap: 24px;
+}
+@media (max-width: 540px) {
+  .header__nav-list {
+    gap: 16px;
+  }
 }
 .header__link {
   transition: color 0.3s ease-in-out;
