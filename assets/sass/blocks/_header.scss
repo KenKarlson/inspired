@@ -33,14 +33,14 @@
   }
 
   &__logo {
-    margin: 0 auto;
+    justify-self: center;
 
     @include tablet {
       max-width: 154px;
-      justify-self: st;
     }
 
     @include mobile {
+      justify-self: start;
       max-width: 124px;
     }
   }

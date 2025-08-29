@@ -335,6 +335,7 @@ svg {
 }
 
 button {
+  display: block;
   padding: 0;
   cursor: pointer;
   background-color: transparent;
@@ -456,16 +457,16 @@ fieldset {
   }
 }
 .header__logo {
-  margin: 0 auto;
+  justify-self: center;
 }
 @media (max-width: 768px) {
   .header__logo {
     max-width: 154px;
-    justify-self: st;
   }
 }
 @media (max-width: 540px) {
   .header__logo {
+    justify-self: start;
     max-width: 124px;
   }
 }
