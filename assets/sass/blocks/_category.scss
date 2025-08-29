@@ -1,0 +1,89 @@
+.category {
+  margin: 0 auto;
+  padding: 24px 0 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 780px;
+  gap: 14px; // Расстояние между элементами
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+
+  @include laptop {
+    max-width: 698px;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+
+  @include tablet {
+    justify-content: flex-start;
+    max-width: 498px;
+    padding: 16px 0 5px;
+    line-height: 15px;
+    flex-wrap: wrap; // Перенос элементов на новую строку
+  }
+
+  @include mobile {
+    justify-content: flex-start;
+    justify-self: start;
+    max-width: 380px;
+    font-size: 10px;
+    line-height: 12px;
+    gap: 8px 30px;
+  }
+
+  &__link {
+    position: relative;
+    transition: color 0.4s ease-in-out;
+    // Добавлено: базовый цвет и курсор
+    color: #333; // или используй переменную
+    cursor: pointer;
+
+    &:hover {
+      color: $dark-grey; // или #666 если переменная не определена
+    }
+
+    // Фокус для доступности
+    &:focus {
+      outline: none;
+      color: $dark-grey;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $dark-grey;
+      outline-offset: 2px;
+    }
+
+    // Псевдоэлемент - подчеркивание
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -10px; // Расположение под ссылкой
+      left: 50%;
+      transform: translateX(-50%); // Центрирование
+      width: 26px;
+      height: 2px;
+      background-color: $active-border-color; // или #000 если переменная не определена
+      opacity: 0; // Скрыто по умолчанию
+      transition: opacity 0.3s ease-in-out; // Плавное появление
+
+      @include tablet {
+        bottom: -4px;
+        width: 20px;
+        height: 1px;
+      }
+    }
+
+    // Активное состояние
+    &_active {
+      pointer-events: none; // Отключение кликов
+      color: $dark-grey; // Активный цвет
+
+      &::after {
+        opacity: 1; // Показываем подчеркивание
+      }
+    }
+  }
+}
